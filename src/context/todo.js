@@ -30,7 +30,7 @@ const TodosProvider = ({ children }) => {
       statusCode: 0,
       createdAt: new Date(),
     })
-  }, [])
+  }, [collection])
 
   return (
     <TodosContext.Provider value={{ todos, addTodo }}>
