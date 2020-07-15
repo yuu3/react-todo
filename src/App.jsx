@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Toolbar from './components/toolbar/Toolbar'
+import { Toolbar } from './components/toolbar/Toolbar'
 import { TodoList } from './components/todoList/TodoList'
 import { Modal } from './components/modal/modal'
-import AppFloatButton from './components/partials/AppFloatButton'
+import { AppFloatButton } from './components/partials/AppFloatButton'
 import { TodosProvider } from './context/todo'
 
 function App() {

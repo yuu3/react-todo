@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FloatButton(props) {
+export const AppFloatButton = (props) => {
   return (
     <button
       onClick={() => props.changeValue()}
@@ -13,5 +13,3 @@ function FloatButton(props) {
     </button>
   )
 }
-
-export default FloatButton
