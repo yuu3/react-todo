@@ -9,9 +9,9 @@ export const TodoList = (props) => {
   const { todos } = useContext(TodosContext)
 
   return (
-    <div className="w-full md:w-1/5 lg:w-1/5 rounded-lg p-4 shadow-lg bg-white">
+    <div className="w-full sm:w-full md:w-1/5 lg:w-1/5 rounded-lg p-4 shadow-lg bg-white">
       <TodoListHeader title={props.title} />
-      <ul className="pl-2">
+      <ul className="pt-2">
         {todos.map(item => {
           return <TodoListItem
             key={item.docId}
