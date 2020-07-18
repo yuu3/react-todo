@@ -3,6 +3,7 @@ import React, {
   useContext
 } from 'react'
 import AppButton from '../partials/AppButton'
+import { ModalBackground } from './ModalBackground'
 import { TodosContext } from '../../context/todo'
 
 export const Modal = (props) => {
@@ -29,28 +30,25 @@ export const Modal = (props) => {
   }
 
   return (
-    <div>
-      <div
-        onClick={() => props.changeValue()}
-        className="bg-black fixed inset-0 z-10 opacity-50"
-      />
-      <div className="w-4/5 h-auto rounded-lg py-6 px-8 bg-white fixed inset-modal bottom-auto z-50">
+    <div className={`${props.modal ? 'opacity-100 z-50' : 'opacity-0 -z-10'} fixed inset-0 flex items-center justify-center duration-300`}>
+      <ModalBackground modalClose={() => props.changeValue()} />
+      <div className="w-4/5 h-auto rounded-lg py-5 px-5 bg-white shadow-lg z-50">
         <div>
-          <label className="block mb-2 text-md">タイトル</label>
+          <label className="block mb-2 text-xs">タイトル</label>
           <input
             name="title"
             onChange={handleInputChange}
             defaultValue={values.title}
-            className="w-full p-2 rounded border border-gray-500"
+            className="w-full p-2 rounded border border-gray-500 text-xs"
           />
         </div>
         <div className="my-4">
-          <label className="block mb-2 text-md">説明</label>
+          <label className="block mb-2 text-xs">説明</label>
           <textarea
             name="desc"
             onChange={handleInputChange}
             defaultValue={values.desc}
-            className="w-full h-32 p-2 rounded border border-gray-500"
+            className="w-full h-32 p-2 rounded border border-gray-500 text-xs"
           />
         </div>
         <div className="flex justify-end">
