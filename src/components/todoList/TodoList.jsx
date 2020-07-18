@@ -2,7 +2,7 @@ import React, {
   useContext
 } from 'react'
 import TodoListHeader from './TodoListHeader'
-import { TodoListItem } from './TodoListItem'
+import TodoListItem from './TodoListItem'
 import { TodosContext } from '../../context/todo'
 
 export const TodoList = (props) => {
