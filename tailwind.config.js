@@ -8,8 +8,8 @@ module.exports = {
       textColor: {
         'main': '#3c40c6'
       },
-      inset: {
-        'modal': '10%'
+      zIndex: {
+        '-10': '-10'
       }
     }
   },
