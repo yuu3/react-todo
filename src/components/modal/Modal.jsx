@@ -59,10 +59,10 @@ export const Modal = (props) => {
             textColor="main"
           />
           <AppButton
+            buttonHandleClick={() => sendTodo()}
             text="作成"
             bgColor="main"
             textColor="white"
-            buttonHandleClick={() => sendTodo()}
           />
         </div>
       </div>
