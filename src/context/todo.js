@@ -32,8 +32,12 @@ const TodosProvider = ({ children }) => {
     })
   }, [collection])
 
+  const deleteTodo = useCallback(async (docId) => {
+    await collection.doc(docId).delete()
+  }, [collection])
+
   return (
-    <TodosContext.Provider value={{ todos, addTodo }}>
+    <TodosContext.Provider value={{ todos, addTodo, deleteTodo }}>
       {children}
     </TodosContext.Provider>
   )
