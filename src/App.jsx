@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Toolbar } from './components/toolbar/Toolbar'
 import { TodoList } from './components/todoList/TodoList'
-import { Modal } from './components/modal/modal'
+import { Modal } from './components/modal/Modal'
 import { AppFloatButton } from './components/partials/AppFloatButton'
 import { TodosProvider } from './context/todo'
 
@@ -14,9 +14,10 @@ function App() {
       <Toolbar />
       <TodosProvider>
         <TodoList title={title} />
-        {modal && (
-          <Modal changeValue={() => modalSwitch(!modal)} />
-        )}
+        <Modal
+          modal={modal}
+          changeValue={() => modalSwitch(!modal)}
+        />
       </TodosProvider>
       <AppFloatButton
         icon="plus"
