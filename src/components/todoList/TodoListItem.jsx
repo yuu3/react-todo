@@ -7,9 +7,9 @@ import { TodosContext } from '../../context/todo'
 
 function TodoListItem(props) {
   const [modal, modalSwitch] = useState(false)
-  const { deleteTodo } = useContext(TodosContext)
+  const { remove } = useContext(TodosContext)
   const handleClick = (docId) => {
-    deleteTodo(docId)
+    remove(docId)
   }
 
   return (

@@ -7,7 +7,7 @@ import { Modal } from './Modal'
 import { TodosContext } from '../../context/todo'
 
 export const ModalTodoCreate = (props) => {
-  const { addTodo } = useContext(TodosContext)
+  const { add } = useContext(TodosContext)
   const [values, setValues] = useState({
     title: '',
     desc: ''
@@ -20,8 +20,8 @@ export const ModalTodoCreate = (props) => {
       ...values, [name]: value
     })
   }
-  const sendTodo = () => {
-    addTodo({
+  const addTodo = () => {
+    add({
       title: values.title,
       desc: values.desc
     }).then(() => {
@@ -63,7 +63,7 @@ export const ModalTodoCreate = (props) => {
           text="作成"
           bgColor="main"
           textColor="white"
-          buttonHandleClick={() => sendTodo()}
+          buttonHandleClick={() => addTodo()}
         />
       </div>
     </Modal>
