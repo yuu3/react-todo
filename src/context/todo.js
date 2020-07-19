@@ -23,7 +23,7 @@ const TodosProvider = ({ children }) => {
     return col
   }, [])
 
-  const addTodo = useCallback(async (todo) => {
+  const add = useCallback(async (todo) => {
     await collection.add({
       title: todo.title,
       desc: todo.desc,
@@ -32,7 +32,7 @@ const TodosProvider = ({ children }) => {
     })
   }, [collection])
 
-  const updateTodo = useCallback(async ({ docId, title, desc }) => {
+  const update = useCallback(async ({ docId, title, desc }) => {
     const update = {
       ...todos.find(todo => todo.docId === docId),
       title,
@@ -42,12 +42,12 @@ const TodosProvider = ({ children }) => {
     await collection.doc(docId).set(update)
   }, [todos, collection])
 
-  const deleteTodo = useCallback(async (docId) => {
+  const remove = useCallback(async (docId) => {
     await collection.doc(docId).delete()
   }, [collection])
 
   return (
-    <TodosContext.Provider value={{ todos, addTodo, updateTodo, deleteTodo }}>
+    <TodosContext.Provider value={{ todos, add, update, remove }}>
       {children}
     </TodosContext.Provider>
   )

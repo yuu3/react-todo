@@ -7,7 +7,7 @@ import { Modal } from './Modal'
 import { TodosContext } from '../../context/todo'
 
 export const ModalTodoUpdate = (props) => {
-  const { updateTodo } = useContext(TodosContext)
+  const { update } = useContext(TodosContext)
   const [values, setValues] = useState({
     title: props.title,
     desc: props.desc
@@ -20,8 +20,8 @@ export const ModalTodoUpdate = (props) => {
       ...values, [name]: value
     })
   }
-  const sendTodo = () => {
-    updateTodo({
+  const updateTodo = () => {
+    update({
       docId: props.docId,
       title: values.title,
       desc: values.desc
@@ -61,7 +61,7 @@ export const ModalTodoUpdate = (props) => {
           textColor="main"
         />
         <AppButton
-          buttonHandleClick={() => sendTodo()}
+          buttonHandleClick={() => updateTodo()}
           text="更新"
           bgColor="main"
           textColor="white"
