@@ -7,7 +7,7 @@ import { ModalTodoCreate } from './components/modal/ModalTodoCreate'
 import { AppFloatButton } from './components/partials/AppFloatButton'
 import { TodosProvider } from './context/todo'
 
-function App() {
+export const App = () => {
   const title = "No Status"
   const [modal, modalSwitch] = useState(false)
 
@@ -28,5 +28,3 @@ function App() {
     </div>
   )
 }
-
-export default App
